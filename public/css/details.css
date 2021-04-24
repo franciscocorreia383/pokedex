@@ -1,3 +1,8 @@
 .centralizado{
     text-align: center;
+    margin-top: auto;
+}
+
+#descricao{
+    font-size: 15px;
 }

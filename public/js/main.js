@@ -43,7 +43,6 @@ async function getPokemonList(url){
 
 function fillTable(data){
 
-
     if(data.previous == null){
         navPrevious.classList.add("disabled")
     }else{
@@ -60,7 +59,7 @@ function fillTable(data){
     nextURL = data.next
     previousURL = data.previous
 
-    pokemonList = []
+    let pokemonList = []
 
     data.results.forEach(function(element, index, array){
         fetch(element.url)
@@ -74,6 +73,7 @@ function fillTable(data){
         })
     })
 }
+
 
 function insertNewRow(data){
     let newRow = pokeBodyTable.insertRow(-1);
@@ -95,7 +95,7 @@ function insertNewRow(data){
             detailButton.className = "btn btn-primary"
             detailButton.textContent = "Detalhes"
             detailButton.addEventListener("click", function(event){
-                window.open(`detail.html?id=${data.id}`,)
+                window.open(`detail.html?id=${data.id}`,"_self")
             })
             detailCell.appendChild(detailButton)
             //console.log(`${data.id} - ${data.name}`);
